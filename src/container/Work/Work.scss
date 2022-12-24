@@ -39,12 +39,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   .app__work-item {
     width: 270px;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 2rem;
+    margin: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #ffffff;
