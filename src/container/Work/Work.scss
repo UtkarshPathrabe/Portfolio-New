@@ -42,7 +42,9 @@
   align-items: center;
   .app__work-item {
     width: 270px;
+    height: -webkit-fill-available;
     flex-direction: column;
+    justify-content: flex-start;
     margin: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -120,11 +122,18 @@
     margin-top: 1rem;
     line-height: 1.5;
   }
+  p {
+    text-align: justify;
+  }
   .app__work-tag {
     position: absolute;
     padding: 0.5rem 1rem;
     border-radius: 10px;
     background-color: #ffffff;
     top: -25px;
+    width: calc(100% - 12px);
+    p {
+      text-align: center;
+    }
   }
 }
