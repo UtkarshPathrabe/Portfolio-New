@@ -39,7 +39,7 @@ const Work = () => {
 
   return (
     <>
-      <h2 className='head-text'>My Creative <span>Portfolio</span> Section</h2>
+      <h2 className='head-text'>My Creative <span>Projects</span> Section</h2>
       <div className='app__work-filter'>
         {PROJECT_TAGS.map((item, index) => (
           <div
