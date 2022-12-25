@@ -8,4 +8,4 @@ export const CONTACT_LINK = 'contact';
 export const navLinks = [ABOUT_LINK, WORK_LINK, SKILLS_LINK, CONTACT_LINK];
 export const navDotsLinks = [HOME_LINK, ABOUT_LINK, WORK_LINK, SKILLS_LINK, TESTIMONIALS_LINK, CONTACT_LINK];
 export const ALL_TAG = 'All';
-export const PROJECT_TAGS = [ALL_TAG, 'AI', 'Full-Stack', 'JavaScript', 'Python', 'R', 'React', 'SpringBoot', 'ThreeJS', 'Web3'];
+export const PROJECT_TAGS = [ALL_TAG, 'AI', 'Full-Stack', 'JavaScript', 'Python', 'R', 'React', 'SpringBoot', 'ThreeJS', 'Web 3.0'];
