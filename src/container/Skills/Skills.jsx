@@ -35,7 +35,7 @@ const Skills = () => {
   return (
     <>
       <h2 className='head-text'>Skills & Experience</h2>
-      <h3>I've worked on a range of technologies and tools in software and web development; be it documentation, task tracking, front-end & back-end application development, cloud technology, artificial intelligence, autonomous vehicles, high-definition maps and so on...</h3>
+      <h3>My skills are wideranging, spanning across multiple creative and technical disciplines. I absorb information like a sponge and I'm in constant pursuit of skills that can help develop me into a well rounded professional.</h3>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
           { skills?.map((skill) => (
