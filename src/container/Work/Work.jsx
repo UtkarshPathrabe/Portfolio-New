@@ -7,6 +7,7 @@ import { urlFor, client } from '../../client';
 
 import './Work.scss';
 import { ALL_TAG, PROJECT_TAGS, WORK_LINK } from '../../constants';
+import ReactTooltip from 'react-tooltip';
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState(ALL_TAG);
@@ -87,13 +88,22 @@ const Work = () => {
                 </a>
               </motion.div>
             </div>
-            <div className='app__work-content app__flex'>
+            <div className='app__work-content app__flex' data-tip data-for={work.title}>
               <h4 className='bold-text'>{work.title}</h4>
-              <p className='p-text' style={{ marginTop: 10 }}>{work.description}</p>
               <div className='app__work-tag app__flex'>
                 <p className='p-text'>{work.tags.join(' || ')}</p>
               </div>
             </div>
+            <ReactTooltip
+              id={work.title}
+              effect='solid'
+              arrowColor='#ffffff'
+              className='projects-tooltip'
+              key={ `${work.title}-tooltip` }
+              place='bottom'
+            >
+              {work.description}
+            </ReactTooltip>
           </div>
         ))}
       </motion.div>
