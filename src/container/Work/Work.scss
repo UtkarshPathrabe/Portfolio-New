@@ -139,3 +139,21 @@
     }
   }
 }
+
+.projects-tooltip {
+  max-width: 280px !important;
+  background-color: var(--white-color) !important;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 5px !important;
+  padding: 1rem !important;
+  color: var(--brown-color) !important;
+  text-align: justify !important;
+  line-height: 1.5 !important;
+  opacity: 1 !important;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem !important;
+    max-width: 480px !important;
+    line-height: 2 !important;
+  }
+}
