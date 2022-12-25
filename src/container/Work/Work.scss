@@ -118,8 +118,11 @@
   position: relative;
   flex-direction: column;
   h4 {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     line-height: 1.5;
+    @media screen and (min-width: 2000px) {
+      margin-top: 5rem;
+    }
   }
   p {
     text-align: justify;
@@ -130,7 +133,7 @@
     border-radius: 10px;
     background-color: #ffffff;
     top: -25px;
-    width: calc(100% - 12px);
+    width: calc(100% - 1rem);
     p {
       text-align: center;
     }
