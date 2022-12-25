@@ -83,6 +83,7 @@ const Skills = () => {
                         arrowColor='#ffffff'
                         className='skills-tooltip'
                         key={ `${work.name}-tooltip` }
+                        place='bottom'
                       >
                         {work.desc}
                       </ReactTooltip>
