@@ -82,7 +82,7 @@ const Certificates = () => {
               className='app__certificate-certificate'
               key={ certificate.name }
             >
-              <a href={certificate.certificateUrl}>
+              <a href={certificate.certificateUrl} target='_blank' rel='noreferrer'>
                 <h4 className='bold-text'>{certificate.name}</h4>
                 <div className='app__certificate-certificate-details-container'>
                   <div className='app__certificate-certificate-details'>
