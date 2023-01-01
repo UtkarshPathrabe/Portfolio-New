@@ -74,9 +74,28 @@ const Certificates = () => {
             )) }
           </div>
         </div>
-        <div className='app__certificate-right-container'>
-
-        </div>
+        <motion.div className='app__certificate-right-container'>
+          { certificates?.map((certificate) => (
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5 }}
+              className='app__certificate-certificate'
+              key={ certificate.name }
+            >
+              <a href={certificate.certificateUrl}>
+                <h4 className='bold-text'>{certificate.name}</h4>
+                <div className='app__certificate-certificate-details-container'>
+                  <div className='app__certificate-certificate-details'>
+                    <p className='p-text'>{certificate.organization}</p>
+                    <p className='p-text'>Issue Date: {certificate.issueDate}</p>
+                    { (certificate.certificateId) ? <p className='p-text'>ID: {certificate.certificateId}</p> : null }
+                  </div>
+                  <img src={urlFor(certificate.imgUrl)} alt={certificate.organization} className='app__certificate-certificate-img' />
+                </div>
+              </a>
+            </motion.div>
+          )) }
+        </motion.div>
       </div>
     </>
   );
