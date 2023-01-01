@@ -79,6 +79,7 @@ const Certificates = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
+              whileHover={{ scale: [1, 0.95] }}
               className='app__certificate-certificate'
               key={ certificate.name }
             >
