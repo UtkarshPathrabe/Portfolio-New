@@ -6,6 +6,8 @@
     font-weight: 400;
     margin-top: 1rem;
     color: var(--gray-color);
+    text-align: justify;
+    width: 90%;
   }
 }
 
@@ -76,6 +78,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .app__skills-exp {
