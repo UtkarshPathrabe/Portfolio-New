@@ -78,8 +78,8 @@ const Certificates = () => {
           { certificates?.map((certificate) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: [1, 0.95] }}
+              transition={{ duration: 0.2 }}
+              whileHover={{ scale: [1, 0.97] }}
               className='app__certificate-certificate'
               key={ certificate.name }
             >
