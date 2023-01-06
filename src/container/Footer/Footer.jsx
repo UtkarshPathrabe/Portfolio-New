@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 import { CONTACT_LINK, images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -10,6 +11,7 @@ const Footer = () => {
   const [formData, setformData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const formRef = useRef();
 
   const { name, email, message } = formData;
 
@@ -35,6 +37,13 @@ const Footer = () => {
         setLoading(false);
         setIsFormSubmitted(true);
       });
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, formRef.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
   }, [email, message, name]);
 
   return (
@@ -51,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
       { (!isFormSubmitted) ?
-      (<div className='app__footer-form app__flex'>
+      (<form className='app__footer-form app__flex' onSubmit={handleSubmit} ref={formRef}>
         <div className='app__flex'>
           <input className='p-text' type='text' placeholder='Your Name' name="name" value={name} onChange={handleChangeInput} />
         </div>
@@ -61,10 +70,10 @@ const Footer = () => {
         <div>
           <textarea className='p-text' placeholder='Your Message' value={message} name="message" onChange={handleChangeInput} />
         </div>
-        <button type="button" className='p-text' onClick={handleSubmit} disabled={ loading }>
+        <button type="submit" className='p-text' disabled={ loading }>
           { loading ? 'Sending' : 'Send Message' }
         </button>
-      </div>) : (<div>
+      </form>) : (<div>
         <h3 className='head-text'>Thank you for getting in touch!</h3>
       </div>)}
     </>
