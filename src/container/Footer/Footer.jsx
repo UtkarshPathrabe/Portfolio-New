@@ -39,7 +39,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className='head-text'>Connect with me</h2>
+      <h2 className='head-text'><span>Connect</span> with me</h2>
       <div className='app__footer-cards'>
         <div className='app__footer-card'>
           <img src={images.email} alt="email" />
