@@ -34,7 +34,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className='head-text'>Skills & Experience</h2>
+      <h2 className='head-text'>My Awesome <span>Skills</span> & <span>Experience</span></h2>
       <h3>My skills are wideranging, spanning across multiple creative and technical disciplines. I absorb information like a sponge and I'm in constant pursuit of skills that can help develop me into a well rounded professional.</h3>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
