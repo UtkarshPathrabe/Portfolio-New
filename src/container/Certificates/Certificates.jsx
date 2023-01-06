@@ -30,11 +30,9 @@ const Certificates = () => {
       });
   }, []);
 
-  console.log({ certificates, educationList, testScores });
-
   return (
     <>
-      <h2 className='head-text'>Education & Certifications</h2>
+      <h2 className='head-text'>My <span>Education</span> & <span>Certifications</span></h2>
       <div className='app__certificate-container'>
         <div className='app__certificate-left-container'>
           <motion.div className='app__certificate-education'>
