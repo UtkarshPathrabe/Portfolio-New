@@ -1,9 +1,12 @@
 import React, { useMemo } from 'react';
+import { motion } from 'framer-motion';
 import useSWR from 'swr';
 import { BiErrorCircle } from 'react-icons/bi';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import { Bars } from 'react-loading-icons';
 import get from 'lodash/get';
+import * as Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 
 import { SERVER_BASE_URL, fetcher, getDateDiffInDays } from '../../constants';
 
@@ -54,11 +57,195 @@ const LeetCode = () => {
               submissionStatsData.push([currentDate.getTime(), 0]);
           }
       }
+      const chartBackgroundColor = '#ffffff';
+      const chartColor = '#6b7688';
       return (<div className='app__accomplishments-content_container'>
         <div className='app__accomplishments-leetcode-details-text_container'>
-          <p className='bold-text'>World Rank: {ranking}</p>
-          <p className='bold-text'>Rating: <FaStar /><FaStar /><FaStar /><FaStarHalfAlt /><FaRegStar /></p>
-          <p className='bold-text'>Problems Solved: {allProblemsSolved}</p>
+          <p className='bold-text'>World Rank:&nbsp;&nbsp;{ranking}</p>
+          <p className='bold-text'>Rating:&nbsp;&nbsp;<FaStar /><FaStar /><FaStar /><FaStarHalfAlt /><FaRegStar /></p>
+          <p className='bold-text'>Problems Solved:&nbsp;&nbsp;{allProblemsSolved}</p>
+        </div>
+        <div className='app__accomplishments-leetcode-details-chart_outer_container'>
+          <div className='app__accomplishments-leetcode-details-chart_container'>
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={{
+                chart: {
+                  type: 'column',
+                  backgroundColor: chartBackgroundColor,
+                },
+                title: {
+                  text: 'Problems Solved',
+                  style: {
+                    color: chartColor,
+                    fontFamily: 'DM-Sans,sans-serif',
+                    fontSize: '18px !important',
+                  },
+                },
+                xAxis: {
+                  categories: ['All', 'Easy', 'Medium', 'Hard'],
+                  labels: {
+                    style: {
+                      color: chartColor,
+                      fontFamily: 'DM-Sans,sans-serif',
+                      fontSize: '14px !important',
+                    },
+                  }
+                },
+                yAxis: [
+                  {
+                    min: 0,
+                    title: {
+                      text: 'Problems',
+                      style: {
+                        color: chartColor,
+                        fontFamily: 'DM-Sans,sans-serif',
+                        fontSize: '14px !important',
+                      },
+                    },
+                    labels: {
+                      style: {
+                        color: chartColor,
+                        fontFamily: 'DM-Sans,sans-serif',
+                        fontSize: '14px !important',
+                      },
+                    }
+                  },
+                ],
+                legend: {
+                  shadow: true,
+                  style: {
+                    color: chartColor,
+                    fontFamily: 'DM-Sans,sans-serif',
+                    fontSize: '16px !important',
+                  },
+                },
+                tooltip: {
+                  shared: true,
+                  style: {
+                    fontFamily: 'DM-Sans,sans-serif',
+                    fontSize: '12px !important',
+                  },
+                },
+                plotOptions: {
+                  column: {
+                    grouping: false,
+                    shadow: false,
+                    borderWidth: 0,
+                  },
+                },
+                series: [
+                  {
+                    name: 'Total',
+                    color: 'hsl(204,24%,75%)',
+                    data: [
+                      allProblems,
+                      easyProblems,
+                      mediumProblems,
+                      hardProblems,
+                    ],
+                    pointPadding: 0.3,
+                    pointPlacement: 0,
+                  },
+                  {
+                    name: 'Solved',
+                    color: 'hsl(204,24%,45%)',
+                    data: [
+                      allProblemsSolved,
+                      easyProblemsSolved,
+                      mediumProblemsSolved,
+                      hardProblemsSolved,
+                    ],
+                    pointPadding: 0.4,
+                    pointPlacement: 0,
+                  },
+                ],
+              }}
+            />
+          </div>
+          <div className='app__accomplishments-leetcode-details-chart_container'>
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={{
+                chart: {
+                  zoomType: 'x',
+                  backgroundColor: chartBackgroundColor,
+                },
+                title: {
+                  text: `${totalSubmissions} Total Submissions`,
+                  style: {
+                    color: chartColor,
+                    fontFamily: 'DM-Sans,sans-serif',
+                    fontSize: '18px !important',
+                  },
+                },
+                subtitle: {
+                  text: document.ontouchstart === undefined
+                    ? 'Click and drag in the plot area to zoom in'
+                    : 'Pinch the chart to zoom in',
+                  style: {
+                    color: 'rgba(255,255,255,0.3)',
+                    fontFamily: 'DM-Sans,sans-serif',
+                    fontSize: '14px !important',
+                  },
+                },
+                xAxis: {
+                  type: 'datetime',
+                  labels: {
+                    style: {
+                      color: chartColor,
+                      fontFamily: 'DM-Sans,sans-serif',
+                      fontSize: '14px !important',
+                    },
+                  }
+                },
+                yAxis: {
+                  title: {
+                    text: 'Submissions',
+                    style: {
+                      color: chartColor,
+                      fontFamily: 'DM-Sans,sans-serif',
+                      fontSize: '14px !important',
+                    },
+                  },
+                  labels: {
+                    style: {
+                      color: chartColor,
+                      fontFamily: 'DM-Sans,sans-serif',
+                      fontSize: '14px !important',
+                    },
+                  }
+                },
+                legend: {
+                  enabled: false,
+                },
+                series: [
+                  {
+                    type: 'area',
+                    name: 'Problems submitted',
+                    data: submissionStatsData,
+                    color: 'hsl(204,24%,75%)',
+                  },
+                ],
+              }}
+            />
+          </div>
+        </div>
+        <div className='app__accomplishments-leetcode-details-badges_outer_container'>
+          <h3 className='bold-text'>LeetCode Badges</h3>
+          <div className='app__accomplishments-leetcode-details-badges_container'>
+            { badges.map(({ displayName, icon }) => (
+              <motion.div
+                whileHover={{ scale: [1, 1.05] }}
+                transition={{ duration: 0.25 }}
+                className='app__accomplishments-leetcode-details-badge'
+                key={`${displayName}_${icon}`}
+              >
+                <img src={(icon && String(icon).startsWith("https://")) ? icon : `https://leetcode.com${icon}`} alt={displayName} />
+                <p className='p-text'>{displayName}</p>
+              </motion.div>
+            )) }
+          </div>
         </div>
       </div>);
     }
