@@ -5,3 +5,4 @@ export { default as Skills } from './Skills/Skills';
 export { default as Certificates } from './Certificates/Certificates';
 export { default as Work } from './Work/Work';
 export { default as Paintings } from './Paintings/Paintings';
+export { default as Accomplishments } from './Accomplishments/Accomplishments';
