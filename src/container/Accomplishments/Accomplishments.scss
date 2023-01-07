@@ -4,6 +4,42 @@
   flex-direction: column;
 }
 
+.app__accomplishments-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  .app__accomplishments-filter-item {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+    &:hover {
+      background-color: var(--secondary-color);
+      color: #ffffff;
+    }
+    @media screen and (min-width: 2000px) {
+      padding: 1rem 2rem;
+      border-radius: 0.85rem;
+    }
+  }
+  .item-active {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+  }
+}
+
+.app__accomplishments-container {
+  width: 100%;
+}
+
 .app__accomplishments-error_container {
   display: flex;
   flex-direction: column;
@@ -20,11 +56,63 @@
 .app__accomplishments-leetcode-details-text_container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  gap: 0.5rem;
   @media screen and (max-width: 900px) {
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+  }
+}
+
+.app__accomplishments-leetcode-details-chart_outer_container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.app__accomplishments-leetcode-details-chart_container {
+  width: 50%;
+  height: 400px;
+  position: relative;
+  margin: 1rem auto;
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+.app__accomplishments-leetcode-details-badges_outer_container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.app__accomplishments-leetcode-details-badges_container {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app__accomplishments-leetcode-details-badge {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  img {
+    width: 100%;
   }
 }
