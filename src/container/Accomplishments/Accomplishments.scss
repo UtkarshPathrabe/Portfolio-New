@@ -3,3 +3,28 @@
   width: 100%;
   flex-direction: column;
 }
+
+.app__accomplishments-error_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__accomplishments-content_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.app__accomplishments-leetcode-details-text_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
