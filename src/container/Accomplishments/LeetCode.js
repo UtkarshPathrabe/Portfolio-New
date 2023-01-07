@@ -42,23 +42,24 @@ const LeetCode = () => {
       const availableSubmissionTimeStamps = Object.keys(submissionStatsObject).sort();
       const submissionStatsData = [];
       for (let i = 0; i < availableSubmissionTimeStamps.length; i++) {
-          if (i > 0 && getDateDiffInDays(availableSubmissionTimeStamps[i], availableSubmissionTimeStamps[i - 1]) > 1) {
-              const currentDate = new Date(availableSubmissionTimeStamps[i] * 1000);
-              currentDate.setDate(currentDate.getDate() - 1);
-              submissionStatsData.push([currentDate.getTime(), 0]);
-          }
-          submissionStatsData.push([
-              parseInt(availableSubmissionTimeStamps[i]) * 1000,
-              parseInt(submissionStatsObject[availableSubmissionTimeStamps[i]]),
-          ]);
-          if (i < availableSubmissionTimeStamps.length - 1 && getDateDiffInDays(availableSubmissionTimeStamps[i + 1], availableSubmissionTimeStamps[i]) > 1) {
-              const currentDate = new Date(availableSubmissionTimeStamps[i] * 1000);
-              currentDate.setDate(currentDate.getDate() + 1);
-              submissionStatsData.push([currentDate.getTime(), 0]);
-          }
+        if (i > 0 && getDateDiffInDays(availableSubmissionTimeStamps[i], availableSubmissionTimeStamps[i - 1]) > 1) {
+          const currentDate = new Date(availableSubmissionTimeStamps[i] * 1000);
+          currentDate.setDate(currentDate.getDate() - 1);
+          submissionStatsData.push([currentDate.getTime(), 0]);
+        }
+        submissionStatsData.push([
+          parseInt(availableSubmissionTimeStamps[i]) * 1000,
+          parseInt(submissionStatsObject[availableSubmissionTimeStamps[i]]),
+        ]);
+        if (i < availableSubmissionTimeStamps.length - 1 && getDateDiffInDays(availableSubmissionTimeStamps[i + 1], availableSubmissionTimeStamps[i]) > 1) {
+          const currentDate = new Date(availableSubmissionTimeStamps[i] * 1000);
+          currentDate.setDate(currentDate.getDate() + 1);
+          submissionStatsData.push([currentDate.getTime(), 0]);
+        }
       }
       const chartBackgroundColor = '#ffffff';
       const chartColor = '#6b7688';
+      const chartFontFamily = '"DM-Sans",sans-serif';
       return (<div className='app__accomplishments-content_container'>
         <div className='app__accomplishments-leetcode-details-text_container'>
           <p className='bold-text'>World Rank:&nbsp;&nbsp;{ranking}</p>
@@ -78,7 +79,7 @@ const LeetCode = () => {
                   text: 'Problems Solved',
                   style: {
                     color: chartColor,
-                    fontFamily: 'DM-Sans,sans-serif',
+                    fontFamily: chartFontFamily,
                     fontSize: '18px !important',
                   },
                 },
@@ -87,7 +88,7 @@ const LeetCode = () => {
                   labels: {
                     style: {
                       color: chartColor,
-                      fontFamily: 'DM-Sans,sans-serif',
+                      fontFamily: chartFontFamily,
                       fontSize: '14px !important',
                     },
                   }
@@ -99,14 +100,14 @@ const LeetCode = () => {
                       text: 'Problems',
                       style: {
                         color: chartColor,
-                        fontFamily: 'DM-Sans,sans-serif',
+                        fontFamily: chartFontFamily,
                         fontSize: '14px !important',
                       },
                     },
                     labels: {
                       style: {
                         color: chartColor,
-                        fontFamily: 'DM-Sans,sans-serif',
+                        fontFamily: chartFontFamily,
                         fontSize: '14px !important',
                       },
                     }
@@ -116,14 +117,14 @@ const LeetCode = () => {
                   shadow: true,
                   style: {
                     color: chartColor,
-                    fontFamily: 'DM-Sans,sans-serif',
+                    fontFamily: chartFontFamily,
                     fontSize: '16px !important',
                   },
                 },
                 tooltip: {
                   shared: true,
                   style: {
-                    fontFamily: 'DM-Sans,sans-serif',
+                    fontFamily: chartFontFamily,
                     fontSize: '12px !important',
                   },
                 },
@@ -175,7 +176,7 @@ const LeetCode = () => {
                   text: `${totalSubmissions} Total Submissions`,
                   style: {
                     color: chartColor,
-                    fontFamily: 'DM-Sans,sans-serif',
+                    fontFamily: chartFontFamily,
                     fontSize: '18px !important',
                   },
                 },
@@ -185,7 +186,7 @@ const LeetCode = () => {
                     : 'Pinch the chart to zoom in',
                   style: {
                     color: 'rgba(255,255,255,0.3)',
-                    fontFamily: 'DM-Sans,sans-serif',
+                    fontFamily: chartFontFamily,
                     fontSize: '14px !important',
                   },
                 },
@@ -194,7 +195,7 @@ const LeetCode = () => {
                   labels: {
                     style: {
                       color: chartColor,
-                      fontFamily: 'DM-Sans,sans-serif',
+                      fontFamily: chartFontFamily,
                       fontSize: '14px !important',
                     },
                   }
@@ -204,14 +205,14 @@ const LeetCode = () => {
                     text: 'Submissions',
                     style: {
                       color: chartColor,
-                      fontFamily: 'DM-Sans,sans-serif',
+                      fontFamily: chartFontFamily,
                       fontSize: '14px !important',
                     },
                   },
                   labels: {
                     style: {
                       color: chartColor,
-                      fontFamily: 'DM-Sans,sans-serif',
+                      fontFamily: chartFontFamily,
                       fontSize: '14px !important',
                     },
                   }
