@@ -1,32 +1,43 @@
 import React from 'react';
 import { BsTwitter, BsInstagram } from 'react-icons/bs';
-import { FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaGithub, FaHackerrank, FaLinkedinIn } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const socialData = [
   {
     Icon: FaLinkedinIn,
     href: 'https://www.linkedin.com/in/utkarshpathrabe/',
-    label: 'linkedin',
+    label: 'LinkedIn',
   },
   {
     Icon: FaGithub,
     href: 'https://github.com/UtkarshPathrabe/',
-    label: 'github',
+    label: 'Github',
+  },
+  {
+    Icon: SiLeetcode,
+    href: 'https://leetcode.com/Utkarsh_Pathrabe/',
+    label: 'LeetCode',
+  },
+  {
+    Icon: FaHackerrank,
+    href: 'https://www.hackerrank.com/UtkarshPathrabe',
+    label: 'HackerRank',
   },
   {
     Icon: BsInstagram,
     href: 'https://www.instagram.com/utkarsh_pathrabe/',
-    label: 'instagram',
+    label: 'Instagram',
   },
   {
     Icon: FaFacebookF,
     href: 'https://www.facebook.com/utkarshpathrabe/',
-    label: 'facebook',
+    label: 'Facebook',
   },
   {
     Icon: BsTwitter,
     href: 'https://twitter.com/UtkarshPathrabe/',
-    label: 'twitter',
+    label: 'Twitter',
   }
 ];
 
