@@ -7,6 +7,7 @@ import './Accomplishments.scss';
 import { ACCOMPLISHMENTS_LINK, GITHUB_TAG, HACKERRANK_TAG, LEETCODE_TAG } from '../../constants';
 import LeetCode from './LeetCode';
 import HackerRank from './HackerRank';
+import GitHub from './GitHub';
 
 const ACCOMPLISHMENTS_TAGS = [
   {
@@ -19,7 +20,7 @@ const ACCOMPLISHMENTS_TAGS = [
   },
   {
     label: GITHUB_TAG,
-    component: <LeetCode />
+    component: <GitHub />
   },
 ];
 
