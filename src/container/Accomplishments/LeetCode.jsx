@@ -8,7 +8,7 @@ import get from 'lodash/get';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import { SERVER_BASE_URL, fetcher, getDateDiffInDays } from '../../constants';
+import { SERVER_BASE_URL, fetcher, getDateDiffInDays, chartStyles } from '../../constants';
 
 import './Accomplishments.scss';
 
@@ -59,9 +59,6 @@ const LeetCode = () => {
           submissionStatsData.push([currentDate.getTime(), 0]);
         }
       }
-      const chartBackgroundColor = '#ffffff';
-      const chartColor = '#6b7688';
-      const chartFontFamily = '"DM-Sans",sans-serif';
       return (<div className='app__accomplishments-content_container'>
         <div className='app__accomplishments-leetcode-details-text_container'>
           <p className='bold-text'>World Rank:&nbsp;&nbsp;{ranking}</p>
@@ -75,23 +72,23 @@ const LeetCode = () => {
               options={{
                 chart: {
                   type: 'column',
-                  backgroundColor: chartBackgroundColor,
+                  backgroundColor: chartStyles.backgroundColor,
                 },
                 title: {
                   text: 'Problems Solved',
                   style: {
-                    color: chartColor,
-                    fontFamily: chartFontFamily,
-                    fontSize: '18px !important',
+                    color: chartStyles.color,
+                    fontFamily: chartStyles.fontFamily,
+                    fontSize: '18px',
                   },
                 },
                 xAxis: {
                   categories: ['All', 'Easy', 'Medium', 'Hard'],
                   labels: {
                     style: {
-                      color: chartColor,
-                      fontFamily: chartFontFamily,
-                      fontSize: '14px !important',
+                      color: chartStyles.color,
+                      fontFamily: chartStyles.fontFamily,
+                      fontSize: '14px',
                     },
                   }
                 },
@@ -101,16 +98,16 @@ const LeetCode = () => {
                     title: {
                       text: 'Problems',
                       style: {
-                        color: chartColor,
-                        fontFamily: chartFontFamily,
-                        fontSize: '14px !important',
+                        color: chartStyles.color,
+                        fontFamily: chartStyles.fontFamily,
+                        fontSize: '14px',
                       },
                     },
                     labels: {
                       style: {
-                        color: chartColor,
-                        fontFamily: chartFontFamily,
-                        fontSize: '14px !important',
+                        color: chartStyles.color,
+                        fontFamily: chartStyles.fontFamily,
+                        fontSize: '14px',
                       },
                     }
                   },
@@ -118,16 +115,16 @@ const LeetCode = () => {
                 legend: {
                   shadow: true,
                   style: {
-                    color: chartColor,
-                    fontFamily: chartFontFamily,
-                    fontSize: '16px !important',
+                    color: chartStyles.color,
+                    fontFamily: chartStyles.fontFamily,
+                    fontSize: '16px',
                   },
                 },
                 tooltip: {
                   shared: true,
                   style: {
-                    fontFamily: chartFontFamily,
-                    fontSize: '12px !important',
+                    fontFamily: chartStyles.fontFamily,
+                    fontSize: '12px',
                   },
                 },
                 plotOptions: {
@@ -140,7 +137,7 @@ const LeetCode = () => {
                 series: [
                   {
                     name: 'Total',
-                    color: 'hsl(204,24%,75%)',
+                    color: chartStyles.fillColor01,
                     data: [
                       allProblems,
                       easyProblems,
@@ -152,7 +149,7 @@ const LeetCode = () => {
                   },
                   {
                     name: 'Solved',
-                    color: 'hsl(204,24%,45%)',
+                    color: chartStyles.fillColor02,
                     data: [
                       allProblemsSolved,
                       easyProblemsSolved,
@@ -172,33 +169,33 @@ const LeetCode = () => {
               options={{
                 chart: {
                   zoomType: 'x',
-                  backgroundColor: chartBackgroundColor,
+                  backgroundColor: chartStyles.backgroundColor,
                 },
                 title: {
                   text: `${totalSubmissions} Total Submissions`,
                   style: {
-                    color: chartColor,
-                    fontFamily: chartFontFamily,
-                    fontSize: '18px !important',
+                    color: chartStyles.color,
+                    fontFamily: chartStyles.fontFamily,
+                    fontSize: '18px',
                   },
                 },
                 subtitle: {
-                  text: document.ontouchstart === undefined
+                  text: (document.ontouchstart === undefined)
                     ? 'Click and drag in the plot area to zoom in'
                     : 'Pinch the chart to zoom in',
                   style: {
-                    color: 'rgba(255,255,255,0.3)',
-                    fontFamily: chartFontFamily,
-                    fontSize: '14px !important',
+                    color: chartStyles.subTitleColor,
+                    fontFamily: chartStyles.fontFamily,
+                    fontSize: '14px',
                   },
                 },
                 xAxis: {
                   type: 'datetime',
                   labels: {
                     style: {
-                      color: chartColor,
-                      fontFamily: chartFontFamily,
-                      fontSize: '14px !important',
+                      color: chartStyles.color,
+                      fontFamily: chartStyles.fontFamily,
+                      fontSize: '14px',
                     },
                   }
                 },
@@ -206,16 +203,16 @@ const LeetCode = () => {
                   title: {
                     text: 'Submissions',
                     style: {
-                      color: chartColor,
-                      fontFamily: chartFontFamily,
-                      fontSize: '14px !important',
+                      color: chartStyles.color,
+                      fontFamily: chartStyles.fontFamily,
+                      fontSize: '14px',
                     },
                   },
                   labels: {
                     style: {
-                      color: chartColor,
-                      fontFamily: chartFontFamily,
-                      fontSize: '14px !important',
+                      color: chartStyles.color,
+                      fontFamily: chartStyles.fontFamily,
+                      fontSize: '14px',
                     },
                   }
                 },
@@ -227,7 +224,7 @@ const LeetCode = () => {
                     type: 'area',
                     name: 'Problems submitted',
                     data: submissionStatsData,
-                    color: 'hsl(204,24%,75%)',
+                    color: chartStyles.fillColor01,
                   },
                 ],
               }}
