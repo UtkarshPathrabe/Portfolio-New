@@ -19,3 +19,12 @@ export const PROJECT_TAGS = [ALL_TAG, 'AI', 'Full-Stack', 'JavaScript', 'Python'
 export const LEETCODE_TAG = 'LeetCode';
 export const HACKERRANK_TAG = 'HackerRank';
 export const GITHUB_TAG = 'GitHub';
+
+export const chartStyles = {
+  backgroundColor: '#ffffff',
+  color: '#6b7688',
+  subTitleColor: 'rgba(255,255,255,0.3)',
+  fontFamily: '"DM-Sans",sans-serif',
+  fillColor01: 'hsl(204,24%,75%)',
+  fillColor02: 'hsl(204,24%,45%)',
+};
