@@ -3,13 +3,101 @@ import { motion } from 'framer-motion';
 import useSWR from 'swr';
 import { BiErrorCircle } from 'react-icons/bi';
 import { Bars } from 'react-loading-icons';
-import get from 'lodash/get';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import { SERVER_BASE_URL, fetcher, getDateDiffInDays } from '../../constants';
+import { SERVER_BASE_URL, fetcher, chartStyles } from '../../constants';
 
 import './Accomplishments.scss';
+
+const Submissions = () => {
+  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank_submission_histories`, fetcher);
+
+  const content = useMemo(() => {
+    if (error) {
+      return (<div className='app__accomplishments-error_container'>
+        <BiErrorCircle size='3rem' />
+        <p className='bold-text'>Failed to load HackerRank submissions data.</p>
+      </div>);
+    }
+    else if (!data) {
+      return <div className='app__accomplishments-error_container'>
+        <Bars stroke='#6b7688' fill='#6b7688' />
+      </div>;
+    }
+    else {
+      return <div className='app__accomplishments-hackerrank-details-chart_container'>
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={{
+            chart: {
+              zoomType: 'x',
+              backgroundColor: chartStyles.backgroundColor,
+            },
+            title: {
+              text: `HackerRank Submissions`,
+              style: {
+                color: chartStyles.color,
+                fontFamily: chartStyles.fontFamily,
+                fontSize: '18px',
+              },
+            },
+            subtitle: {
+              text: document.ontouchstart === undefined
+                ? 'Click and drag in the plot area to zoom in'
+                : 'Pinch the chart to zoom in',
+              style: {
+                color: chartStyles.subTitleColor,
+                fontFamily: chartStyles.fontFamily,
+                fontSize: '14px',
+              },
+            },
+            xAxis: {
+              type: 'datetime',
+              labels: {
+                style: {
+                  color: chartStyles.color,
+                  fontFamily: chartStyles.fontFamily,
+                  fontSize: '14px',
+                },
+              }
+            },
+            yAxis: {
+              title: {
+                text: 'Submissions',
+                style: {
+                  color: chartStyles.color,
+                  fontFamily: chartStyles.fontFamily,
+                  fontSize: '14px',
+                },
+              },
+              labels: {
+                style: {
+                  color: chartStyles.color,
+                  fontFamily: chartStyles.fontFamily,
+                  fontSize: '14px',
+                },
+              }
+            },
+            legend: {
+              enabled: false,
+            },
+            series: [
+              {
+                type: 'area',
+                name: 'Problems submitted',
+                data: data,
+                color: chartStyles.fillColor01,
+              },
+            ],
+          }}
+        />
+      </div>;
+    }
+  }, [data, error]);
+
+  return content;
+};
 
 const Scores = () => {
   const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank_scores`, fetcher);
@@ -51,6 +139,7 @@ const Scores = () => {
 
 const HackerRank = () => {
   return (<div className='app__accomplishments-content_container'>
+    <Submissions />
     <Scores />
   </div>);
 };
