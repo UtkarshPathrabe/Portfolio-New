@@ -23,7 +23,9 @@ const LeetCode = () => {
       </div>);
     }
     else if (!data) {
-      return <Bars width='5rem' height='4rem' />;
+      return <div className='app__accomplishments-error_container'>
+        <Bars stroke='#6b7688' fill='#6b7688' />
+      </div>;
     }
     else {
       const ranking = get(data, ['data', 'matchedUser', 'profile', 'ranking']);
