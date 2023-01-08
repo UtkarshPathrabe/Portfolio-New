@@ -24,16 +24,9 @@ import about03 from '../assets/about03.png';
 import about04 from '../assets/about04.png';
 
 import profile from '../assets/utkarsh-profile.png';
+import utkarshImage from '../assets/profile01.jpeg';
 import circle from '../assets/circle.svg';
 import logo from '../assets/utkarsh-name-logo.png';
-
-import adidas from '../assets/adidas.png';
-import amazon from '../assets/amazon.png';
-import asus from '../assets/asus.png';
-import bolt from '../assets/bolt.png';
-import nb from '../assets/nb.png';
-import skype from '../assets/skype.png';
-import spotify from '../assets/spotify.png';
 
 const images = {
   email,
@@ -62,13 +55,7 @@ const images = {
   profile,
   circle,
   logo,
-  adidas,
-  amazon,
-  asus,
-  bolt,
-  nb,
-  skype,
-  spotify,
+  utkarshImage,
 };
 
 export default images;
