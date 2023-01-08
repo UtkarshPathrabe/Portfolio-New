@@ -36,6 +36,10 @@
   @media screen and (max-width: 450px) {
     padding: 4rem 1rem 2rem;
   }
+
+  @media screen and (min-width: 2000px) {
+    margin: 0 68px 0 102px;
+  }
 }
 
 .copyright {
@@ -149,6 +153,9 @@
       }
     }
   }
+  @media screen and (min-width: 2000px) {
+    top: calc(100vh - 640px);
+  }
 }
 
 .app__navigation {
@@ -178,6 +185,9 @@
       width: 20px;
       height: 20px;
     }
+  }
+  @media screen and (min-width: 2000px) {
+    top: calc(50vh - 160px);
   }
 }
 
