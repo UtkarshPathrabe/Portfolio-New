@@ -28,6 +28,7 @@
     @media screen and (min-width: 2000px) {
       padding: 1rem 2rem;
       border-radius: 0.85rem;
+      font-size: 1.5rem;
     }
   }
   .item-active {
@@ -45,6 +46,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .app__accomplishments-content_container {
@@ -114,5 +116,32 @@
   gap: 0.5rem;
   img {
     width: 100%;
+  }
+}
+
+.app__accomplishments-hackerrank-details-score_outer_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+.app__accomplishments-hackerrank-details-score_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.5rem;
+  cursor: default;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    justify-content: space-between;
   }
 }
