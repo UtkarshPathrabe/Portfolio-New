@@ -24,7 +24,7 @@ const LeetCode = () => {
     }
     else if (!data) {
       return <div className='app__accomplishments-error_container'>
-        <Bars stroke='#6b7688' fill='#6b7688' />
+        <Bars stroke={ chartStyles.color } fill={ chartStyles.color } />
       </div>;
     }
     else {
