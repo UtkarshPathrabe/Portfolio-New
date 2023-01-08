@@ -182,3 +182,43 @@
     text-align: center;
   }
 }
+
+.app__accomplishments-github-details-stats-chart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  gap: 1rem;
+  @media screen and (max-width: 900px) {
+    margin: 1rem 0;
+  }
+  img {
+    width: 60%;
+    @media screen and (min-width: 2000px) {
+      width: 50%;
+    }
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+  }
+}
+
+.app__accomplishments-github-details-stats-chart_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 1rem;
+  gap: 1rem;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  img {
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+  }
+}
