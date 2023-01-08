@@ -6,6 +6,7 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import './Accomplishments.scss';
 import { ACCOMPLISHMENTS_LINK, GITHUB_TAG, HACKERRANK_TAG, LEETCODE_TAG } from '../../constants';
 import LeetCode from './LeetCode';
+import HackerRank from './HackerRank';
 
 const ACCOMPLISHMENTS_TAGS = [
   {
@@ -14,7 +15,7 @@ const ACCOMPLISHMENTS_TAGS = [
   },
   {
     label: HACKERRANK_TAG,
-    component: <LeetCode />
+    component: <HackerRank />
   },
   {
     label: GITHUB_TAG,
