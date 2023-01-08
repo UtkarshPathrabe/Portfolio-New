@@ -221,8 +221,8 @@ const Badges = () => {
 
 const HackerRank = () => {
   return (<div className='app__accomplishments-content_container'>
-    <Submissions />
     <Scores />
+    <Submissions />
     <Badges />
   </div>);
 };
