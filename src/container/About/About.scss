@@ -2,14 +2,50 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+  @media screen and (min-width: 2000px) {
+    width: 80%;
+  }
+}
+
+.app__profiles-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .app__profiles {
+  flex: 3;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: 2rem;
+}
+
+.app__profiles-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  img {
+    height: 70vh;
+    object-fit: contain;
+    border-radius: 2rem;
+    &:hover {
+      box-shadow: 0 0 25px #fef4f5;
+    }
+    @media screen and (max-width: 600px) {
+      height: 50vh;
+    }
+  }
 }
 
 .app__profile-item {
