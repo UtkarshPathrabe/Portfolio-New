@@ -5,7 +5,7 @@
   "description": "",
   "main": "package.json",
   "author": "UTKARSH PATHRABE <uapathrabe@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build"
