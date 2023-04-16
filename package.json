@@ -2,6 +2,8 @@
   "name": "frontend_react",
   "version": "0.1.0",
   "private": true,
+  "author": "UTKARSH PATHRABE <uapathrabe@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@sanity/client": "^2.23.2",
