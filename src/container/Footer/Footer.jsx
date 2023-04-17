@@ -24,6 +24,9 @@ const Footer = () => {
   }, []);
 
   const handleSubmit = useCallback((e) => {
+    if (name.trim().length === 0 || email.trim().length === 0 || message.trim().length === 0) {
+      return;
+    }
     e.preventDefault();
     setLoading(true);
     const contact = {
@@ -60,15 +63,15 @@ const Footer = () => {
         </div>
       </div>
       { (!isFormSubmitted) ?
-      (<form className='app__footer-form app__flex' onSubmit={handleSubmit} ref={formRef}>
+      (<form className='app__footer-form app__flex' onSubmit={handleSubmit} ref={formRef} >
         <div className='app__flex'>
-          <input className='p-text' type='text' placeholder='Your Name' name="name" value={name} onChange={handleChangeInput} />
+          <input className='p-text' type='text' placeholder='Your Name' name="name" value={name} onChange={handleChangeInput} required />
         </div>
         <div className='app__flex'>
-          <input className='p-text' type='email' placeholder='Your Email' name="email" value={email} onChange={handleChangeInput} />
+          <input className='p-text' type='email' placeholder='Your Email' name="email" value={email} onChange={handleChangeInput} required />
         </div>
         <div>
-          <textarea className='p-text' placeholder='Your Message' value={message} name="message" onChange={handleChangeInput} />
+          <textarea className='p-text' placeholder='Your Message' value={message} name="message" onChange={handleChangeInput} required />
         </div>
         <button type="submit" className='p-text' disabled={ loading }>
           { loading ? 'Sending' : 'Send Message' }
