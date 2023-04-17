@@ -24,7 +24,7 @@ const GitHub = () => {
       <motion.img
         whileHover={{ scale: [1, 1.05] }}
         transition={{ duration: 0.25 }}
-        src='https://github-readme-stats.vercel.app/api?username=UtkarshPathrabe&show_icons=true&theme=transparent&hide=issues,contribs&border_radius=10px&count_private=true'
+        src='https://github-readme-stats.vercel.app/api?username=UtkarshPathrabe&show_icons=true&theme=transparent&border_radius=10px&count_private=true'
         alt='github_stats'
       />
       <motion.img
