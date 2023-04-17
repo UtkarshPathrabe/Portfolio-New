@@ -14,7 +14,7 @@ export const navLinks = [HOME_LINK, ABOUT_LINK, WORK_LINK, SKILLS_LINK, CERTIFIC
 export const navDotsLinks = [HOME_LINK, ABOUT_LINK, WORK_LINK, SKILLS_LINK, CERTIFICATES_LINK, ACCOMPLISHMENTS_LINK, PAINTINGS_LINK, CONTACT_LINK];
 
 export const ALL_TAG = 'All';
-export const PROJECT_TAGS = [ALL_TAG, 'AI', 'Full-Stack', 'JavaScript', 'Python', 'PWA', 'R', 'React', 'SpringBoot', 'ThreeJS', 'Web 3.0'];
+export const PROJECT_TAGS = [ALL_TAG, 'AI', 'Angular', 'Full-Stack', 'JavaScript', 'Python', 'PWA', 'R', 'React', 'SpringBoot', 'ThreeJS', 'Web 3.0'];
 
 export const LEETCODE_TAG = 'LeetCode';
 export const HACKERRANK_TAG = 'HackerRank';
