@@ -46,7 +46,7 @@ const Skills = () => {
               key={ skill.name }
             >
               <div className='app__flex' style={{ background: skill.bgColor }}>
-                <img src={ urlFor(skill.icon) } alt={skill.name} />
+                <img src={ urlFor(skill.icon) } alt={skill.name} loading='lazy' />
               </div>
               <p className='p-text'>{skill.name}</p>
             </motion.div>
@@ -100,7 +100,7 @@ const Skills = () => {
                 transition={{ duration: 0.5, type: 'tween' }}
                 key={brand._id}
               >
-                <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+                <img src={urlFor(brand.imgUrl)} alt={brand.name} loading='lazy' />
               </motion.div>
             )) }
           </div>
