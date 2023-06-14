@@ -27,7 +27,7 @@ const About = () => {
           transition={{ duration: 0.5, type: 'tween' }}
           className='app__profiles-image'
         >
-          <img src={images.utkarshImage} alt='utkarsh pathrabe' />
+          <img src={images.utkarshImage} alt='utkarsh pathrabe' loading='lazy' />
         </motion.div>
         <div className='app__profiles'>
           { abouts.map((about, index) => (
@@ -38,7 +38,7 @@ const About = () => {
               className='app__profile-item'
               key={about.title + index}
             >
-              <img src={urlFor(about.imgUrl)} alt={about.title} />
+              <img src={urlFor(about.imgUrl)} alt={about.title} loading='lazy' />
               <h2 className='bold-text' style={{ marginTop: 20 }}>{about.title}</h2>
               <p className='p-text' style={{ marginTop: 10 }}>{about.description}</p>
             </motion.div>
