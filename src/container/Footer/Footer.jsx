@@ -54,11 +54,11 @@ const Footer = () => {
       <h2 className='head-text'><span>Connect</span> with me</h2>
       <div className='app__footer-cards'>
         <div className='app__footer-card'>
-          <img src={images.email} alt="email" />
+          <img src={images.email} alt="email" loading='lazy' />
           <a href="mailto:uapathrabe@gmail.com" className='p-text' target='_blank' rel='noreferrer'>uapathrabe@gmail.com</a>
         </div>
         <div className='app__footer-card'>
-          <img src={images.mobile} alt="mobile" />
+          <img src={images.mobile} alt="mobile" loading='lazy' />
           <a href="http://m.me/utkarshpathrabe" className='p-text' target='_blank' rel='noreferrer'>Messenger</a>
         </div>
       </div>
