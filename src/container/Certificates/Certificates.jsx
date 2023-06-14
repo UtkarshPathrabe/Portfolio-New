@@ -42,7 +42,7 @@ const Certificates = () => {
                 key={ education.year }
               >
                 <div className='app__certificate-education-img-container'>
-                  <img className='app__certificate-education-img' alt={education.year} src={urlFor(education.imgUrl)} />
+                  <img className='app__certificate-education-img' alt={education.year} src={urlFor(education.imgUrl)} loading='lazy' />
                 </div>
                 <motion.div
                   className='app__certificate-education-details'
@@ -89,7 +89,7 @@ const Certificates = () => {
                     <p className='p-text'>Issue Date: {certificate.issueDate}</p>
                     { (certificate.certificateId) ? <p className='p-text'>ID: {certificate.certificateId}</p> : null }
                   </div>
-                  <img src={urlFor(certificate.imgUrl)} alt={certificate.organization} className='app__certificate-certificate-img' />
+                  <img src={urlFor(certificate.imgUrl)} alt={certificate.organization} className='app__certificate-certificate-img' loading='lazy' />
                 </div>
               </a>
             </motion.div>
