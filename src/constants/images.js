@@ -9,7 +9,7 @@ import about02 from '../assets/about02.png';
 import about03 from '../assets/about03.png';
 import about04 from '../assets/about04.png';
 
-import profile from '../assets/utkarsh-profile.png';
+import profile from '../assets/utkarsh-profile.webp';
 import utkarshImage from '../assets/profile01.webp';
 import circle from '../assets/circle.svg';
 import logo from '../assets/utkarsh-name-logo.png';
