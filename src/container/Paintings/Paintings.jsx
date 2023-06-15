@@ -19,7 +19,9 @@ const Paintings = () => {
         const formattedData = data.map(d => ({
           height: d.height,
           width: d.width,
-          src: urlFor(d.imgUrl)
+          src: urlFor(d.imgUrl),
+          alt: data.name,
+          key: data.name,
         }));
         setPaintings(formattedData)
       });
