@@ -241,7 +241,7 @@ const LeetCode = () => {
                 className='app__accomplishments-leetcode-details-badge'
                 key={`${displayName}_${icon}`}
               >
-                <img src={(icon && String(icon).startsWith("https://")) ? icon : `https://leetcode.com${icon}`} alt={displayName} loading='lazy' />
+                <img src={(icon && String(icon).startsWith("https://")) ? icon : `https://leetcode.com${icon}`} alt={displayName} loading='lazy' width='100%' height='100%' />
                 <p className='p-text'>{displayName}</p>
               </motion.div>
             )) }
