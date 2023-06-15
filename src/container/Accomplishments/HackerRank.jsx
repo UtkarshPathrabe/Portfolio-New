@@ -201,7 +201,7 @@ const Badges = () => {
               className='app__accomplishments-hackerrank-details-badges_container'
               key={url}
             >
-              <img src={badgesImagesURL[url]} alt={url} style={{backgroundColor: getLevelColor(level), padding: '0.5rem', borderRadius: '1rem'}} loading='lazy' />
+              <img src={badgesImagesURL[url]} alt={url} style={{backgroundColor: getLevelColor(level), padding: '0.5rem', borderRadius: '1rem'}} loading='lazy' width='100%' height='130px' />
               <h3 className='bold-text'>{badge_name}</h3>
               <p className='p-text'>{getLevel(level)}</p>
               <div>
