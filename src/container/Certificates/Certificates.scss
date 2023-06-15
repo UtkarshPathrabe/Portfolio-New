@@ -62,12 +62,12 @@
   align-items: flex-start;
   margin-bottom: 1rem;
   cursor: pointer;
-  h4 {
+  h3 {
     font-weight: 500;
   }
   p {
     font-weight: 400;
-    color: var(--gray-color);
+    color: var(--black-color);
     margin-top: 5px;
   }
 }
@@ -83,12 +83,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h4 {
+    h3 {
       font-weight: 500;
     }
     p {
-      font-weight: 500;
-      color: var(--gray-color);
+      font-weight: 400;
+      color: var(--black-color);
       font-size: medium;
     }
   }
