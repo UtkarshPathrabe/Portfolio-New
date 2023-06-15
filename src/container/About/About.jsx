@@ -27,7 +27,7 @@ const About = () => {
           transition={{ duration: 0.5, type: 'tween' }}
           className='app__profiles-image'
         >
-          <img src={images.utkarshImage} alt='utkarsh pathrabe' loading='lazy' />
+          <img src={images.utkarshImage} alt='utkarsh pathrabe' loading='lazy' width='100%' height='100%' />
         </motion.div>
         <div className='app__profiles'>
           { abouts.map((about, index) => (
