@@ -16,7 +16,6 @@ const Paintings = () => {
     const query = '*[_type == "paintings"] | order(rank asc)';
     client.fetch(query)
       .then((data) => {
-        console.log({data});
         const formattedData = data.map(d => ({
           height: d.height,
           width: d.width,
@@ -27,8 +26,6 @@ const Paintings = () => {
         setPaintings(formattedData)
       });
   }, []);
-
-  console.log(paintings);
 
   return (
     <>
