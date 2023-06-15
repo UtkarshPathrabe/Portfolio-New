@@ -50,7 +50,7 @@ const Certificates = () => {
                   transition={{ duration: 0.5 }}
                   whileHover={{ scale: [1, 1.05] }}
                 >
-                  <h4 className='bold-text'>{education.timeLine} [{education.score}]</h4>
+                  <h3 className='bold-text'>{education.timeLine} [{education.score}]</h3>
                   <p className='p-text'>{education.description}</p>
                   <p className='p-text'>{education.board}</p>
                 </motion.div>
@@ -66,7 +66,7 @@ const Certificates = () => {
                 whileHover={{ scale: [1, 1.05] }}
                 key={testScore.title}
               >
-                <h4 className='bold-text'>{testScore.title}</h4>
+                <h3 className='bold-text'>{testScore.title}</h3>
                 <p className='p-text'>{testScore.score}</p>
               </motion.div>
             )) }
