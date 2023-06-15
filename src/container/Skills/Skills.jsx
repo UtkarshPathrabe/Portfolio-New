@@ -100,7 +100,7 @@ const Skills = () => {
                 transition={{ duration: 0.5, type: 'tween' }}
                 key={brand._id}
               >
-                <img src={urlFor(brand.imgUrl)} alt={brand.name} loading='lazy' />
+                <img src={urlFor(brand.imgUrl)} alt={brand.name} loading='lazy' width='100%' height='100%' />
               </motion.div>
             )) }
           </div>
