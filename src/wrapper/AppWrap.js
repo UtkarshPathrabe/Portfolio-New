@@ -14,7 +14,7 @@ const AppWrap = (Component, idName, classNames) => function HOC() {
     }
   }, [inView, setInView]);
 
-  return (<div id={idName} className={`app__container ${classNames}`}>
+  return (<div id={idName} className={(classNames) ? `app__container ${classNames}` : 'app__container'}>
     <div className='app__wrapper app__flex' ref={ref}>
       <Component />
       <div className='copyright'>
