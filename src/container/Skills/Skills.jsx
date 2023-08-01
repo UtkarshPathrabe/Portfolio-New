@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
 
@@ -32,26 +32,29 @@ const Skills = () => {
       });
   }, []);
 
+  const skillsList = useMemo(() => (<motion.div className='app__skills-list'>
+    { skills?.map((skill) => (
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className='app__skills-item app__flex'
+        key={ skill.name }
+      >
+        <div className='app__flex' style={{ background: skill.bgColor }}>
+          <img src={ urlFor(skill.icon) } alt={skill.name} loading='lazy' />
+        </div>
+        <p className='p-text'>{skill.name}</p>
+      </motion.div>
+    )) }
+  </motion.div>),
+  [skills]);
+
   return (
     <>
       <h2 className='head-text'>My Awesome <span>Skills</span> & <span>Experience</span></h2>
       <h3>My skills are wideranging, spanning across multiple creative and technical disciplines. I absorb information like a sponge and I'm in constant pursuit of skills that can help develop me into a well rounded professional.</h3>
       <div className='app__skills-container'>
-        <motion.div className='app__skills-list'>
-          { skills?.map((skill) => (
-            <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className='app__skills-item app__flex'
-              key={ skill.name }
-            >
-              <div className='app__flex' style={{ background: skill.bgColor }}>
-                <img src={ urlFor(skill.icon) } alt={skill.name} loading='lazy' />
-              </div>
-              <p className='p-text'>{skill.name}</p>
-            </motion.div>
-          )) }
-        </motion.div>
+        { skillsList }
         <div className='app__skills-exp-container'>
           <motion.div className='app__skils-exp'>
             {experiences?.map((experience) => (
