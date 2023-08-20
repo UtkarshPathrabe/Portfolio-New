@@ -49,7 +49,7 @@
 }
 
 .app__profile-item {
-  width: 190px;
+  width: 300px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -73,17 +73,26 @@
 .app__profile-about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
-  margin: 2rem;
+  margin: 1rem 2rem;
   gap: 0.5rem;
   p {
-    text-align: center;
-    font-weight: 600;
+    text-align: justify;
+    font-weight: 400;
   }
   @media screen and (max-width: 900px) {
     justify-content: flex-start;
     align-items: flex-start;
+    p {
+      text-align: justify;
+      font-weight: 400;
+    }
+  }
+  @media screen and (min-width: 2000px) {
+    p {
+      font-size: 1.75rem;
+    }
   }
 }
