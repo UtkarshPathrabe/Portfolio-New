@@ -13,7 +13,7 @@ import { SERVER_BASE_URL, fetcher, getDateDiffInDays, chartStyles } from '../../
 import './Accomplishments.scss';
 
 const LeetCode = () => {
-  const { data, error } = useSWR(`${SERVER_BASE_URL}/leetcode_data`, fetcher);
+  const { data, error } = useSWR(`${SERVER_BASE_URL}/leetcode`, fetcher);
 
   const content = useMemo(() => {
     if (error) {
