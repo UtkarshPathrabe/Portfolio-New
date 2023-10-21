@@ -49,7 +49,7 @@ const getLevelColor = (level) => {
 };
 
 const Submissions = () => {
-  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank_submission_histories`, fetcher);
+  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank/submission_histories`, fetcher);
 
   const content = useMemo(() => {
     if (error) {
@@ -138,7 +138,7 @@ const Submissions = () => {
 };
 
 const Scores = () => {
-  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank_scores`, fetcher);
+  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank/scores`, fetcher);
 
   const content = useMemo(() => {
     if (error) {
@@ -176,7 +176,7 @@ const Scores = () => {
 };
 
 const Badges = () => {
-  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank_badges`, fetcher);
+  const { data, error } = useSWR(`${SERVER_BASE_URL}/hackerrank/badges`, fetcher);
 
   const content = useMemo(() => {
     if (error) {
