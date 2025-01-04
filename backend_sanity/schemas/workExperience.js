@@ -22,6 +22,25 @@ export default {
                 name:'duration',
                 title:'Duration',
                 type:'string'
-            }
+            },
+            {
+                name:'points',
+                title:'Points',
+                type:'array',
+                of:[{ type:'string'}]
+            },
+            {
+                name:'icon',
+                title:'Icon',
+                type: 'image',
+                options: {
+                  hotspot: true,
+                },
+            },
+            {
+                name:'iconBg',
+                title:'IconBackground',
+                type:'string'
+            },
     ]
 }
